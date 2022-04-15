@@ -8,7 +8,7 @@ How to use my plugin.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "action_swagger"
+gem "active_swagger"
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install action_swagger
+$ gem install active_swagger
 ```
 
 ## Contributing
