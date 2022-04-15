@@ -1,4 +1,4 @@
-# ActionSwagger
+# ActiveSwagger
 Short description and motivation.
 
 ## Usage

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module ActionSwagger
+module ActiveSwagger
   VALID_TYPES = %i[string number integer array object].freeze
   Error = Class.new(StandardError)
 
@@ -10,12 +10,12 @@ module ActionSwagger
 
     def swagger_attribute(name, options)
       check_column(name, options[:type])
-      ActionSwagger::Proxy.swagger_attributes[to_s] ||= {}
-      ActionSwagger::Proxy.swagger_attributes[to_s].merge!({ name => options })
+      ActiveSwagger::Proxy.swagger_attributes[to_s] ||= {}
+      ActiveSwagger::Proxy.swagger_attributes[to_s].merge!({ name => options })
     end
 
     def swaggerize(mode)
-      ActionSwagger::Proxy.swaggerize[to_s] = mode
+      ActiveSwagger::Proxy.swaggerize[to_s] = mode
     end
 
     def check_column(column, _type)
@@ -23,11 +23,11 @@ module ActionSwagger
     end
 
     def swagger_attributes
-      ActionSwagger::Proxy.swagger_attributes[to_s]
+      ActiveSwagger::Proxy.swagger_attributes[to_s]
     end
 
     def swaggerize?
-      ActionSwagger::Proxy.swaggerize[to_s]
+      ActiveSwagger::Proxy.swaggerize[to_s]
     end
 
     def column_attributes

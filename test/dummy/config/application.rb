@@ -7,7 +7,7 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-require 'action_swagger'
+require 'active_swagger'
 
 module Dummy
   class Application < Rails::Application

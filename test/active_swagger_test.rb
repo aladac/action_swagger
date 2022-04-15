@@ -2,9 +2,9 @@
 
 require 'test_helper'
 
-class ActionSwaggerTest < ActiveSupport::TestCase
+class ActiveSwaggerTest < ActiveSupport::TestCase
   test 'it has a version number' do
-    assert ActionSwagger::VERSION
+    assert ActiveSwagger::VERSION
   end
 
   test 'it shows a swagger schema' do

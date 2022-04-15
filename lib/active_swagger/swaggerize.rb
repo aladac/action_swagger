@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module ActionSwagger
+module ActiveSwagger
   module Swaggerize
     extend ActiveSupport::Concern
 
     included do
-      extend ActionSwagger::Proxy
+      extend ActiveSwagger::Proxy
     end
   end
 end

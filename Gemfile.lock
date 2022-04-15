@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    action_swagger (0.1.0)
+    active_swagger (0.1.0.pre)
       rails (>= 6)
 
 GEM
@@ -159,7 +159,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  action_swagger!
+  active_swagger!
   pry (~> 0.14.1)
   pry-rails (~> 0.3.9)
   sqlite3

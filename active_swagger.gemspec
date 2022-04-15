@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-require_relative 'lib/action_swagger/version'
+require_relative 'lib/active_swagger/version'
 
 Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 2.6.0'
-  spec.name        = 'action_swagger'
-  spec.version     = ActionSwagger::VERSION
+  spec.name        = 'active_swagger'
+  spec.version     = ActiveSwagger::VERSION
   spec.authors     = ['aladac']
   spec.email       = ['adam.ladachowski@gmail.com']
-  spec.homepage    = 'https://github.com/aladac/action_swagger'
-  spec.summary     = 'ActionSwagger'
+  spec.homepage    = 'https://github.com/aladac/active_swagger'
+  spec.summary     = 'ActiveSwagger'
   spec.description = spec.summary
   spec.license = 'MIT'
 
