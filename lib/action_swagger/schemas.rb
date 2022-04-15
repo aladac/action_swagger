@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Swaggerize
+module ActionSwagger
   VALID_TYPES = %i[string number integer array object].freeze
   Error = Class.new(StandardError)
 
@@ -10,12 +10,12 @@ module Swaggerize
 
     def swagger_attribute(name, options)
       check_column(name, options[:type])
-      Swaggerize::Schemas.swagger_attributes[to_s] ||= {}
-      Swaggerize::Schemas.swagger_attributes[to_s].merge!({ name => options })
+      ActionSwagger::Schemas.swagger_attributes[to_s] ||= {}
+      ActionSwagger::Schemas.swagger_attributes[to_s].merge!({ name => options })
     end
 
     def swaggerize(mode)
-      Swaggerize::Schemas.swaggerize[to_s] = mode
+      ActionSwagger::Schemas.swaggerize[to_s] = mode
     end
 
     def check_column(column, _type)
@@ -23,15 +23,16 @@ module Swaggerize
     end
 
     def swagger_attributes
-      Swaggerize::Schemas.swagger_attributes[to_s]
+      ActionSwagger::Schemas.swagger_attributes[to_s]
     end
 
     def swaggerize?
-      Swaggerize::Schemas.swaggerize[to_s]
+      ActionSwagger::Schemas.swaggerize[to_s]
     end
 
     def column_attributes
       attrs = {}
+
       columns.each do |column|
         attrs[column.name.to_sym] = { type: column.sql_type_metadata.type }
       end
