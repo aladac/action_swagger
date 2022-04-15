@@ -4,18 +4,18 @@ module ActionSwagger
   VALID_TYPES = %i[string number integer array object].freeze
   Error = Class.new(StandardError)
 
-  module Schemas
+  module Proxy
     @swagger_attributes = {}
     @swaggerize = {}
 
     def swagger_attribute(name, options)
       check_column(name, options[:type])
-      ActionSwagger::Schemas.swagger_attributes[to_s] ||= {}
-      ActionSwagger::Schemas.swagger_attributes[to_s].merge!({ name => options })
+      ActionSwagger::Proxy.swagger_attributes[to_s] ||= {}
+      ActionSwagger::Proxy.swagger_attributes[to_s].merge!({ name => options })
     end
 
     def swaggerize(mode)
-      ActionSwagger::Schemas.swaggerize[to_s] = mode
+      ActionSwagger::Proxy.swaggerize[to_s] = mode
     end
 
     def check_column(column, _type)
@@ -23,11 +23,11 @@ module ActionSwagger
     end
 
     def swagger_attributes
-      ActionSwagger::Schemas.swagger_attributes[to_s]
+      ActionSwagger::Proxy.swagger_attributes[to_s]
     end
 
     def swaggerize?
-      ActionSwagger::Schemas.swaggerize[to_s]
+      ActionSwagger::Proxy.swaggerize[to_s]
     end
 
     def column_attributes

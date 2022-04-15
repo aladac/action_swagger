@@ -3,11 +3,12 @@
 require_relative 'lib/action_swagger/version'
 
 Gem::Specification.new do |spec|
+  spec.required_ruby_version = '>= 2.6.0'
   spec.name        = 'action_swagger'
   spec.version     = ActionSwagger::VERSION
   spec.authors     = ['aladac']
   spec.email       = ['adam.ladachowski@gmail.com']
-  spec.homepage    = 'https://github.com/aladac'
+  spec.homepage    = 'https://github.com/aladac/action_swagger'
   spec.summary     = 'ActionSwagger'
   spec.description = spec.summary
   spec.license = 'MIT'
@@ -20,6 +21,6 @@ Gem::Specification.new do |spec|
     Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
   end
 
-  spec.add_dependency 'rails', '>= 7.0.2.3'
+  spec.add_dependency 'rails', '>= 6'
   spec.metadata['rubygems_mfa_required'] = 'true'
 end

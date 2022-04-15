@@ -5,7 +5,7 @@ module ActionSwagger
     extend ActiveSupport::Concern
 
     included do
-      extend ActionSwagger::Schemas
+      extend ActionSwagger::Proxy
     end
   end
 end
